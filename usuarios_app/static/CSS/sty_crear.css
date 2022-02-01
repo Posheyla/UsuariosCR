@@ -1,0 +1,14 @@
+h1{
+    color:rgb(84, 84, 190);
+    text-align: center;
+}
+.contenedor{
+    background-color: cornflowerblue;
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0px 200px;
+}
+div{
+    margin:10px;
+}
