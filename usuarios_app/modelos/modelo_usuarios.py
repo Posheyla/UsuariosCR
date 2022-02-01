@@ -24,3 +24,21 @@ class Usuario:
         for usuario in resultado:
             listaDeUsuarios.append(cls(usuario["id"],usuario["nombre"],usuario["apellido"],usuario["email"],usuario["created_at"],usuario["update_at"]))
         return listaDeUsuarios
+
+    @classmethod
+    def mostrarUsuario(cls,usuario):
+        query = "SELECT * FROM usuarios WHERE usuarios.id = %(id)s;"
+        resultado = connectToMySQL("esquema_usuario").query_db(query,usuario)
+        return resultado
+
+    @classmethod
+    def editarUsuario(cls,usuario):
+        query = "UPDATE usuarios SET nombre = %(nombre)s, apellido = %(apellido)s, email = %(email)s, update_at = NOW()  WHERE id = %(id)s;"
+        resultado = connectToMySQL("esquema_usuario").query_db(query, usuario)
+        return resultado
+
+    @classmethod
+    def eliminarUsuario(cls,usuario):
+        query = "DELETE FROM usuarios WHERE id = %(id)s;"
+        resultado = connectToMySQL("esquema_usuario").query_db(query, usuario)
+        return resultado

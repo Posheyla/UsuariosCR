@@ -2,10 +2,18 @@ h1{
     color: cornflowerblue;
     text-align: center;
 }
+.table-primary{
+    margin:auto;
+}
 form{
-    margin:0px 400px;
+    margin: 10px;
+    text-align: center;
 }
 .contactos{
     border-collapse: collapse;
+
+}
+.comandos{
+    display: flex;
 
 }
